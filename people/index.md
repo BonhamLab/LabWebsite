@@ -8,4 +8,5 @@ associated with the immune system and the gut microbiome.
 
 ## People
 
-Kevin Bonham, PhD
+{{list_people}}
+

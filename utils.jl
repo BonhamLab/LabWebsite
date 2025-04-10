@@ -1,0 +1,65 @@
+using Literate
+using TimeZones
+using Git
+
+@reexport using Dates
+import Hyperscript as HS
+
+
+node = HS.m
+
+# March 5, 2019
+date_format(d) = Dates.format(d, "U d, yyyy")
+
+
+
+function hfun_list_people()
+    return string(
+        node("div", class="cards-row",
+        (
+        node("div", class="card-column",
+            node("div", class="card-body", 
+                node("img", src="/assets/portrait_placeholder.png"),
+                node("div", class="card-container", 
+                    node("h2", p.name),
+                    node("div", class="card-title", p.title),
+                    node("div", class="card-vitae", p.vitae),
+                    node("div", class="card-email", p.email),
+                    node("p", node("a", href="mailto:$(p.email)",
+                            node("button", class="card-button", "Contact")
+                           )
+                    )
+                )
+            )
+           ) for p in get_people()
+        )...
+        )
+    )
+end
+
+function get_people(basepath::String="people")
+    # find all valid "people/xxx.md" files, exclude the index which is where
+    # the people list gets placed
+    paths = String[]
+    for (root, dirs, files) in walkdir(basepath)
+        filter!(p -> endswith(p, ".md") && p != "index.md", files)
+        append!(paths, joinpath.(root, files))
+    end
+    # for each of those people, get their info
+    posts = [
+        (
+        date=getvarfrom(:joined, rp),
+        name=getvarfrom(:name, rp),
+        title=getvarfrom(:title, rp),
+        email=getvarfrom(:email, rp),
+        vitae=getvarfrom(:vitae, rp),
+        alumn=getvarfrom(:vitae, rp, false),
+        href="/$(splitext(rp)[1])",
+        tags=get_page_tags(rp)
+        )
+        for rp in paths
+    ]
+    sort!(posts, by=x -> x.date)
+   
+    return posts
+end

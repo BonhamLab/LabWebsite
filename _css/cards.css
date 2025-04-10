@@ -1,0 +1,72 @@
+/* Fix for the footer spacing issue */
+/* Add this class to wrap all your cards */
+.cards-row {
+  display: flex;
+  flex-wrap: wrap;
+  clear: both;
+  overflow: auto; /* This ensures the container expands to include all floating children */
+  margin-bottom: 2rem; /* Add space before footer */
+}
+
+/* Update card column to use flexbox instead of float */
+.card-column {
+  width: 30%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+  box-sizing: border-box; /* Ensures padding doesn't add to width */
+}
+@media (max-width:62rem) {
+  .card-column {
+    width:45%;
+    display:block;
+  }
+}
+@media (max-width:30rem){
+  .card-column {
+    width:95%;
+    display:block;
+  }
+}
+.card-body{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.card-body img {
+  padding-left:0;
+  width: 100%;
+}
+.card-container {
+  padding: 0 16px;
+}
+.card-container::after, .row::after{
+  content:"";
+  clear:both;
+  display:table;
+}
+.card-title {
+  color:grey;
+}
+.card-vitae {
+  margin-top:0.5em;
+}
+.card-email {
+  font-family:courier;
+  margin-top:0.5em;
+  margin-bottom:0.5em;
+  word-break: break-all; /* This will break long email addresses */
+  overflow-wrap: break-word; /* Modern browsers */
+}
+.card-button{
+  border:none;
+  outline:0;
+  display:inline-block;
+  padding:8px;
+  color:white;
+  background-color:#000;
+  text-align:center;
+  cursor:pointer;
+  width:100%;
+}
+.card-button:hover{
+  background-color:#555;
+}
+
