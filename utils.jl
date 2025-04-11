@@ -21,7 +21,7 @@ function hfun_list_people()
             node("div", class="card-body", 
                 node("img", src="/assets/portrait_placeholder.png"),
                 node("div", class="card-container", 
-                    node("h2", p.name),
+                     node("h2", node("a", href=p.href, p.name)),
                     node("div", class="card-title", p.title),
                     node("div", class="card-vitae", p.vitae),
                     node("div", class="card-email", p.email),
@@ -31,7 +31,7 @@ function hfun_list_people()
                     )
                 )
             )
-           ) for p in get_people()
+           ) for p in get_people() if !p.alumn
         )...
         )
     )
@@ -53,7 +53,61 @@ function get_people(basepath::String="people")
         title=getvarfrom(:title, rp),
         email=getvarfrom(:email, rp),
         vitae=getvarfrom(:vitae, rp),
-        alumn=getvarfrom(:vitae, rp, false),
+        alumn=getvarfrom(:alumn, rp, false),
+        href="/$(splitext(rp)[1])",
+        tags=get_page_tags(rp)
+        )
+        for rp in paths
+    ]
+    sort!(posts, by=x -> x.date)
+   
+    return posts
+end
+
+function hfun_person_header()
+    name = getlvar(:name, getlvar(:title))
+    return string(node("div", class="franklin-content", node("h1", name)))
+end
+
+function hfun_list_projects()
+    return string(
+        node("div", class="cards-row",
+        (
+        node("div", class="card-column",
+            node("div", class="card-body", 
+                node("img", src="/assets/portrait_placeholder.png"),
+                node("div", class="card-container", 
+                    node("h2", p.name),
+                    node("div", class="card-title", p.title),
+                    node("div", class="card-email", p.email),
+                    node("p", node("a", href="mailto:$(p.email)",
+                            node("button", class="card-button", "Contact")
+                           )
+                    )
+                )
+            )
+           ) for p in get_projects() if !p.completed
+        )...
+        )
+    )
+end
+
+function get_projects(basepath::String="projects")
+    # find all valid "projects/xxx.md" files, exclude the index which is where
+    # the projects list gets placed
+    paths = String[]
+    for (root, dirs, files) in walkdir(basepath)
+        filter!(p -> endswith(p, ".md") && p != "index.md", files)
+        append!(paths, joinpath.(root, files))
+    end
+    # for each of those projects, get their info
+    posts = [
+        (
+        date=getvarfrom(:joined, rp),
+        name=getvarfrom(:name, rp),
+        title=getvarfrom(:title, rp),
+        complete=getvarfrom(:complete, rp, false),
+        funding=getvarfrom(:funding, rp, "N/A"),
         href="/$(splitext(rp)[1])",
         tags=get_page_tags(rp)
         )
