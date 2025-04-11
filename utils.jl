@@ -135,3 +135,18 @@ function get_projects(basepath::String="projects")
    
     return posts
 end
+
+# Add this to your utils.jl file
+function hfun_nav_link(args)
+    # Get the current page path
+    (href, text) = args
+    current_path = get_rpath()
+    
+    # Check if the current page matches the href or is a subpage
+    is_active = startswith(current_path, href[2:end]) || (href == "/" && current_path == "index.html")
+    
+    # Add the active class if this is the current page or subpage
+    class = is_active ? "nav-link active" : "nav-link"
+    
+    return string(node("a", href=href, class=class, text))
+end
