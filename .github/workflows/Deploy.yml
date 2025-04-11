@@ -9,7 +9,7 @@ on:
     types: [opened, synchronize]
 
 env:
-  GH_USERNAME: "kescobo"
+  GH_USERNAME: "bonhamlab"
   PREVIEWS_PREFIX: "previews/PR"  # will be followed by PR number
 
 jobs:
@@ -44,6 +44,6 @@ jobs:
         with:
           message: |
             Preview should be up in a couple of mins at
-            https://blog.bonham.ch/${{ env.PRID }}
+            https://bonhamlab.github.io/${{ env.PRID }}
             (if you get a 404, wait 30s then refresh).
         if: github.event_name == 'pull_request'
