@@ -67,4 +67,5 @@ hr {
   border: 0;
   height: 1px;
   background-color: #ddd;
+  max-width: var(--max-width);
 }
