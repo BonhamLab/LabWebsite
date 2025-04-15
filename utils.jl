@@ -12,6 +12,9 @@ node = HS.m
 date_format(d) = Dates.format(d, "U d, yyyy")
 
 
+function hfun_page_modtime()
+    mtime = Date(unix2datetime(stat(get_rpath()).mtime))
+end
 
 function hfun_list_people()
     return string(
