@@ -35,7 +35,7 @@
 
 
 <div class="franklin-content" >
-  <div class="toc"><ol><li><a href="#using_git">Using Git</a><ol><li><a href="#glossary">Glossary</a></li></ol></li><li><a href="#github">Github</a><ol><li><a href="#sign_up">Sign up</a></li><li><a href="#development_workflow">Development workflow</a><ol><li><a href="#typical_workflow">Typical workflow</a></li><li><a href="#starting_a_repository_locally">Starting a repository locally</a></li><li><a href="#cloning_an_existing_repository">Cloning an existing repository</a></li><li><a href="#using_branches">Using branches</a></li><li><a href="#submitting_pull_requests">Submitting pull requests</a></li><li><a href="#using_issues_to_track_tasks_and_plans">Using issues to track tasks and plans</a></li><li><a href="#tagging,_releasing,_and_publishing">Tagging, releasing, and publishing</a></li></ol></li></ol></li><li><a href="#trainee_/_staff_personal_repos">Trainee / Staff Personal Repos</a><ol><li><a href="#getting_started_from_the_template">Getting started from the template</a></li><li><a href="#periodic_meetings">Periodic meetings</a></li><li><a href="#posters_and_presentations">Posters and presentations</a></li></ol></li><li><a href="#project_repositories">Project Repositories</a></li><li><a href="#13633231208144796923"></a></li></ol></div><p>Lab code should be version controlled
+  <div class="toc"><ol><li><a href="#using_git">Using Git</a><ol><li><a href="#glossary">Glossary</a></li></ol></li><li><a href="#github">Github</a><ol><li><a href="#sign_up">Sign up</a><ol><li><a href="#starting_a_repository_locally">Starting a repository locally</a></li><li><a href="#cloning_an_existing_repository">Cloning an existing repository</a></li><li><a href="#using_branches">Using branches</a></li><li><a href="#submitting_pull_requests">Submitting pull requests</a></li><li><a href="#using_issues_to_track_tasks_and_plans">Using issues to track tasks and plans</a></li><li><a href="#tagging,_releasing,_and_publishing">Tagging, releasing, and publishing</a></li></ol></li></ol></li><li><a href="#trainee_/_staff_personal_repos">Trainee / Staff Personal Repos</a><ol><li><a href="#getting_started_from_the_template">Getting started from the template</a></li><li><a href="#periodic_meetings">Periodic meetings</a></li><li><a href="#posters_and_presentations">Posters and presentations</a></li></ol></li><li><a href="#project_repositories">Project Repositories</a></li><li><a href="#13633231208144796923"></a></li></ol></div><p>Lab code should be version controlled
 and hosted on an online repository (probably <a href="https://github.com/bonhamlab">github</a>).
 If you don't know how to do that, read on!</p>
 <h2 id="using_git" ><a href="#using_git"> Using Git</a></h2><p>Git is a distributed version control system (DVCS).
@@ -90,21 +90,9 @@ If you already have a github account, it is totally fine to use the same one.
 You are also welcome to create a work-specific one,
 though it can be complicated to manage multiple users
 on your local system.</p>
-<p>If you haven't already, be sure to complete the <a href="#">new lab member form</a>,
+<p>If you haven't already, be sure to complete the <a href="https://baserow.io/form/c8xNEibNpemn-cbZiKnuliYVcrQ9M2w_0rNuCfsC6W4%0A%0A###%20Development%20workflow%0A%0A####%20Typical%20workflow%0A%0AThe%20most%20common%20actions%20in%20a%20git%20repo%20are%20to%20stage%20and%20commit%20changes,%0Athen%20push%20them%20to%20a%20remote%20repository.%0A%0A1.%20Edit%20a%20file%20or%20files.%20Be%20sure%20to%20save%21%0A2.%20use%20%60git%20add%20%24FILE%60%20to%20stage%20a%20file%20to%20be%20committed.%0A3.%20use%20%60git%20commit%20-m%20%22some%20informative%20message%20about%20the%20change(s)%22%60%20to%20create%20a%20commit%0A4.%20use%20%60git%20push%60%20to%20push%20your%20commit%20to%20the%20remote.%0A%0A**NOTES**%0A%0A-%20If%20you%20have%20only%20made%20changes%20to%20files%20that%20have%20been%20previously%20tracked,%0A%20%20you%20can%20use%20%60git%20commit%20-am%20%22commit%20message%22%60%20to%20combine%20stpes%202%20and%203.%0A%20%20This%20will%20commit%20_all_%20changes%20to%20previously%20tracked%20files.">new lab member form</a>,
 and include your github username so that you can be added to lab repos.</p>
-<h3 id="development_workflow" ><a href="#development_workflow"> Development workflow</a></h3><h4 id="typical_workflow" ><a href="#typical_workflow"> Typical workflow</a></h4><p>The most common actions in a git repo are to stage and commit changes,
-then push them to a remote repository.</p>
-<ol>
-<li>Edit a file or files. Be sure to save!</li>
-<li>use <code>git add $FILE</code> to stage a file to be committed.</li>
-<li>use <code>git commit -m &quot;some informative message about the change(s)&quot;</code> to create a commit</li>
-<li>use <code>git push</code> to push your commit to the remote.</li>
-</ol>
-<p><strong>NOTES</strong></p>
 <ul>
-<li>If you have only made changes to files that have been previously tracked,
-  you can use <code>git commit -am &quot;commit message&quot;</code> to combine stpes 2 and 3.
-  This will commit <em>all</em> changes to previously tracked files.</li>
 <li>Generally speaking, shoot for smaller, atomic (self-contained) commits.
   If you've forgotten to commit for a while, use <code>git diff</code> to look back through your changes,
   and if possible break them up into smaller commits (and force yourself to write informative commit messages!)</li>
