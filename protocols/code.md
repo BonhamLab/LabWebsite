@@ -81,7 +81,7 @@ If you haven't already, be sure to complete the [new lab member form][new-labmem
 and include your github username so that you can be added to lab repos.
 
 [github-newuser]: https://github.com/signup
-[new-labmember]: #
+[new-labmember]: https://baserow.io/form/c8xNEibNpemn-cbZiKnuliYVcrQ9M2w_0rNuCfsC6W4
 
 ### Development workflow
 

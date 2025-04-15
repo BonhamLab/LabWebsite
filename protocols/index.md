@@ -10,7 +10,8 @@ can be found in the [Lab Code of Conduct (CoC)](/protocols/coc),
 but these can be expressed informally as
 do your best, be honest, and don't be a jerk.
 If you are new to the lab,
-also be sure to familiarize yourself with
+please read through and complete your [onboarding](/protocols/onboarding).
+Also be sure to familiarize yourself with
 [meetings and administration](/protocols/admin).
 
 Everything here should be taken as a starting point for your work in the lab,

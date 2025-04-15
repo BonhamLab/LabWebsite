@@ -44,14 +44,54 @@ as soon as possible.
 * I will use scientific knowledge to benefit society and the environment rather than myself.
 * I will protect research subjects, vulnerable populations, and ecosystems in all aspects of my work.
 
-## Procedures for reporting
+## Procedures for reporting complaints or concerns
 
-TODO
+Do not hesitate to reach out to Kevin formally or informally for any disputes or concerns
+arising within the lab, or involving your work for the lab.
 
-## Other resources
+- Ideally, issues or conflicts could be resolved through conversations
+  before they get out of hand.
+  Do not hesitate to voice concerns, frustrations, or problems
+  during your periodic meetings,
+  or by scheduling a dedicated meeting to discuss the issue.
+- Formal reporting should be done via Kevin's hostpital-managed email address
+  (`*@tuftsmedicine.org`) for staff, fellows, or postdocs,
+  and via Kevin's University-managed email address (`*@tufts.edu`) for graduate students.
+  Maintaining a "paper" trail for disputes/complaints can be important,
+  particularly if you are concerned about behavior persisting.
+  - **You are not ever required to wait or take additional steps before beginning a formal process**
+  - If you feel the need to document anything prior to reporting,
+    creating a private git repository and making commits,
+    or sending emails to yourself with a private email address are good options
+    to establish timelines.
+- Kevin will always endeavor to be your advocate in conflicts with others,
+  with the hostpital, or with the school.
+  That said, if for any reason you feel that Kevin is not the right advocate
+  (or Kevin is the subject of your complaint),
+  there are many other options for informal or formal reporting
+
+### TODO: hospital resources
+
+These resources are particularly relevant for postdocs, fellows, and staff,
+but may also be relevant for students.
+
+### University resources
+
+These resources are particularly relevant for students,
+but may also be relevant for staff, fellows, and postdocs.
 
 - [Tufts University employee policies and procedures](https://access.tufts.edu/introduction-employee-policies-procedures)
     - [Non-discrimination](https://access.tufts.edu/non-discrimination-statement)
     - [Sexual misconduct policy](https://access.tufts.edu/tufts-policy-prohibiting-sexual-misconduct)
     - [Grievance and dispute resolution](https://access.tufts.edu/grievance-and-dispute-resolution)
-- 
+
+## Other Codes of Conduct
+
+Depending on your work, you may also be bound by other codes of conduct or etiquette.
+It is your responsibility to familiarize yourself
+with the expected behavior in other spaces where you are representing the lab.
+Here are a few examples, though this should not be considered exhaustive:
+
+- Julia language [community standards](https://julialang.org/community/standards/)
+- [Tufts standards of professional conduct and integrity](https://access.tufts.edu/standards-professional-conduct-and-integrity)
+
