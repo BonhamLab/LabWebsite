@@ -6,6 +6,7 @@ vitae="Hired gun"
 portrait="/assets/danielle_headshot.png"
 email="dpeterso@wellesley.edu"
 joined = Date(2025,06,09)
+github = "@danielle-pinto"
 +++
 
 "I am a computational biologist with a passion for microbial genomics.
