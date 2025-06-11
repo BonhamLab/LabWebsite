@@ -27,7 +27,11 @@ function hfun_list_people()
                     node("h2", node("a", href=p.href, p.name)),
                     node("div", class="card-title", p.title),
                     node("div", class="card-vitae", p.vitae),
-                    node("div", class="card-email", node("a", href="mailto:$(p.email)", p.email)),
+                    node("div", class="card-github", 
+                         node("a", href=joinpath("https://github.com", p.github),
+                              node("i", class="fa-brands fa-github-square"),
+                              " $(p.github)")
+                        ),
                     node("p", node("a", href=p.href,
                             node("button", class="card-button", "Details")
                            )
@@ -49,6 +53,7 @@ function person_info(rp)
     portrait=getvarfrom(:portrait, rp, "/assets/portrait_placeholder.png"),
     vitae=getvarfrom(:vitae, rp),
     alumn=getvarfrom(:alumn, rp, false),
+    github=getvarfrom(:github, rp),
     href="/$(splitext(rp)[1])",
     tags=get_page_tags(rp)
     )
@@ -78,6 +83,11 @@ function hfun_person_header()
                 node("h1", class="profile-name", person.name),
                 node("div", class="profile-title", person.title),
                 node("div", class="profile-vitae", person.vitae),                    
+                node("div", class="card-github", 
+                        node("a", href=joinpath("https://github.com", person.github),
+                            node("i", class="fa-brands fa-github-square"),
+                                " $(person.github)")
+                    ),
                 node("div", class="profile-email",
                      node("a", href="mailto:$(person.email)", person.email)
                 ),
