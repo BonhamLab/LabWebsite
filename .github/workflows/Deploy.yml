@@ -44,6 +44,6 @@ jobs:
         with:
           message: |
             Preview should be up in a couple of mins at
-            https://bonhamlab.github.io/${{ env.PRID }}
+            https://lab.bonham.ch/${{ env.PRID }}
             (if you get a 404, wait 30s then refresh).
         if: github.event_name == 'pull_request'
