@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
+  
+   <link rel="stylesheet" href="/previews/PR1/libs/highlight/styles/nord.min.css">
+   
+  <link rel="stylesheet" href="/previews/PR1/css/franklin.css">
+<link rel="stylesheet" href="/previews/PR1/css/hypertext.css">
+<link rel="stylesheet" href="/previews/PR1/css/cards.css">
+<link rel="icon" href="/previews/PR1/assets/favicon.png">
+
+  
+</head>
+<body>
+<header>
+  <div class="header-container">
+    <div class="blog-name"><a href="/previews/PR1/"><img src="/previews/PR1/assets/lab-logo-banner.png" width="100%" id="banner"></a></div>
+    <nav>
+      <ul class="nav-links">
+        <li><a class="nav-link" href="/previews/PR1/people/">People</a></li>
+        <li><a class="nav-link active" href="/previews/PR1/protocols/">Protocols</a></li>
+        <li><a class="nav-link" href="/previews/PR1/projects/">Projects</a></li>
+      </ul>
+    </nav>
+  </div>
+  <hr/>
+</header>
+
+
+
+
+<div class="franklin-content" >
+  <div class="toc"><ol><li><a href="#using_git">Using Git</a><ol><li><a href="#glossary">Glossary</a></li></ol></li><li><a href="#github">Github</a><ol><li><a href="#sign_up">Sign up</a><ol><li><a href="#starting_a_repository_locally">Starting a repository locally</a></li><li><a href="#cloning_an_existing_repository">Cloning an existing repository</a></li><li><a href="#using_branches">Using branches</a></li><li><a href="#submitting_pull_requests">Submitting pull requests</a></li><li><a href="#using_issues_to_track_tasks_and_plans">Using issues to track tasks and plans</a></li><li><a href="#tagging,_releasing,_and_publishing">Tagging, releasing, and publishing</a></li></ol></li></ol></li><li><a href="#trainee_/_staff_personal_repos">Trainee / Staff Personal Repos</a><ol><li><a href="#getting_started_from_the_template">Getting started from the template</a></li><li><a href="#periodic_meetings">Periodic meetings</a></li><li><a href="#posters_and_presentations">Posters and presentations</a></li></ol></li><li><a href="#project_repositories">Project Repositories</a></li><li><a href="#13633231208144796923"></a></li></ol></div><p>Lab code should be version controlled
+and hosted on an online repository (probably <a href="https://github.com/bonhamlab">github</a>).
+If you don't know how to do that, read on!</p>
+<h2 id="using_git" ><a href="#using_git"> Using Git</a></h2><p>Git is a distributed version control system (DVCS).
+Basically, that means that you keep track of your code on whatever system you're working on,
+and then merge with whatever other systems need to have the code.
+No individual code location needs to be the "source of truth"
+(though in practice we can establish one).</p>
+<p>The best way to learn git is to use it.
+Kevin will push you to use it frequently,
+and if you run into problems, try to solve them on your own,
+then ask Kevin to help!</p>
+<p>In the meantime, this page has some resources to get you started.</p>
+<ul>
+<li><a href="https://content.red-badger.com/resources/what-is-git-and-github">What is git and github?</a> - a description in plain english</li>
+<li><a href="https://www.gitkraken.com/learn/git">Learn git</a>, from gitkraken</li>
+<li><a href="https://kescobo.gitlab.io/hutlab-git/tutorial-slides.html">Kevin's HutLab bonus lab meeting presentation</a></li>
+</ul>
+<h3 id="glossary" ><a href="#glossary"> Glossary</a></h3><p>These terms will come up frequently when using git and github,
+and are included here as a reference.
+A more complete list can be <a href="https://www.gitkraken.com/learn/git/definitions">found here</a></p>
+<ul>
+<li><strong>repo (short for repository)</strong> - a folder with git super powers</li>
+<li><strong>stage</strong> - a new file or a change to an existing file that will be included in the next commit
+  (when you <code>git add $FILE</code>, then <code>$FILE</code> is now staged)</li>
+<li><strong><code>add</code></strong> - include the file or file change in the next commit</li>
+<li><strong><code>commit</code> (verb)</strong> - register staged changes to the version history</li>
+<li><strong>commit (noun)</strong> - the record of changes from the previous version</li>
+<li><strong>remote</strong> - a location different from your current system that the repo also lives.
+  This is often on something like github or gitlab, but could just be another one of your computers
+  that you can connect to.
+  It could even be a different directory on the same computer!</li>
+<li><strong><code>push</code></strong> - move commits from your local repo to a remote.
+  If you're not paying attention, this can lead to merge conflicts
+  (which is OK! <code>git</code> is built to handle this).</li>
+<li><strong><code>pull</code></strong> - move commits from a remote to your local repo.
+  If you're not paying attention, this can lead to merge conflicts.</li>
+<li><strong>branch</strong> - an alternate history of commits</li>
+<li><strong>merge</strong> - join the version history of two branches</li>
+<li><strong>merge conflict</strong> - when merging branches that each have changes to the same line(s),
+  and user input is required to decide which version to include</li>
+<li><strong>origin</strong> - the default name for a remote</li>
+<li><strong>main/master</strong> - typical names for the primary branch of a repo</li>
+<li><strong>PR (pull request)</strong> - when using <code>git</code> social networks (eg github),
+  an interface to comment on a branch that could be merged into the <code>main</code> branch.
+  On gitlab and some other forges, this is called a "merge request" instead</li>
+<li><strong>issue</strong> - when using <code>git</code> social networks like (eg github),
+  an interface to discuss problems, potential features, or other information about a repo.</li>
+</ul>
+<h2 id="github" ><a href="#github"> Github</a></h2><h3 id="sign_up" ><a href="#sign_up"> Sign up</a></h3><p>If you don't already have a github account,
+you can create one <a href="https://github.com/signup">here</a>.
+If you already have a github account, it is totally fine to use the same one.
+You are also welcome to create a work-specific one,
+though it can be complicated to manage multiple users
+on your local system.</p>
+<p>If you haven't already, be sure to complete the <a href="https://baserow.io/form/c8xNEibNpemn-cbZiKnuliYVcrQ9M2w_0rNuCfsC6W4%0A%0A###%20Development%20workflow%0A%0A####%20Typical%20workflow%0A%0AThe%20most%20common%20actions%20in%20a%20git%20repo%20are%20to%20stage%20and%20commit%20changes,%0Athen%20push%20them%20to%20a%20remote%20repository.%0A%0A1.%20Edit%20a%20file%20or%20files.%20Be%20sure%20to%20save%21%0A2.%20use%20%60git%20add%20%24FILE%60%20to%20stage%20a%20file%20to%20be%20committed.%0A3.%20use%20%60git%20commit%20-m%20%22some%20informative%20message%20about%20the%20change(s)%22%60%20to%20create%20a%20commit%0A4.%20use%20%60git%20push%60%20to%20push%20your%20commit%20to%20the%20remote.%0A%0A**NOTES**%0A%0A-%20If%20you%20have%20only%20made%20changes%20to%20files%20that%20have%20been%20previously%20tracked,%0A%20%20you%20can%20use%20%60git%20commit%20-am%20%22commit%20message%22%60%20to%20combine%20stpes%202%20and%203.%0A%20%20This%20will%20commit%20_all_%20changes%20to%20previously%20tracked%20files.">new lab member form</a>,
+and include your github username so that you can be added to lab repos.</p>
+<ul>
+<li>Generally speaking, shoot for smaller, atomic (self-contained) commits.
+  If you've forgotten to commit for a while, use <code>git diff</code> to look back through your changes,
+  and if possible break them up into smaller commits (and force yourself to write informative commit messages!)</li>
+<li>You don't have to <code>push</code> after every commit, but try to make sure to sync up with your remote
+  before taking a break or ending for the day.</li>
+<li>When you are getting started or working on a project primarily by yourself,
+  it is fine to work on the <code>main</code> branch.
+  But the moment you start collaborating, you will need to <a href="#using-branches">use branches</a>.
+  It can be good to practice this habit even when it's not necessary.</li>
+</ul>
+<h4 id="starting_a_repository_locally" ><a href="#starting_a_repository_locally"> Starting a repository locally</a></h4><p>If you are starting a brand new project or repository,
+you can simply create a new directory (<code>mkdir my_project</code>),
+and then inside that directory (<code>cd my_project</code>),
+run <code>git init</code> to give the directory super powers.</p>
+<p>Typically, the first file that you should create is a <code>README.md</code>
+where you describe the purpose of the repository.
+Commit the readme, and you're off to the races!</p>
+<p>As soon as is practical, create a remote on github,
+and add it as the <code>origin</code> remote by copying the URL,
+and running <code>git remote add origin $URL</code>.
+Then <code>git push -u origin main</code> will push your local commits
+and set <code>origin</code> as the default remote, and <code>main</code> as the default branch.
+For future <code>push</code>es, you won't need to add that information.</p>
+<h4 id="cloning_an_existing_repository" ><a href="#cloning_an_existing_repository"> Cloning an existing repository</a></h4><p>More often, you will be starting from an existing repository.
+If you are starting a new analysis project,
+presentation, or poster,
+you can also select the appropriate template repository,
+and create a new repo on github from the template.
+Otherwise, just find the repo, copy the URL,
+and run <code>git clone $URL</code>.
+This will download the project to your local system,
+(into a directory the same name as the project)
+and set the remote as <code>origin</code>.</p>
+<h4 id="using_branches" ><a href="#using_branches"> Using branches</a></h4><p>In typical software development, 
+branches are used to develop specific "features",
+typically one feature per branch.
+This keeps code that might be affecting other parts of the code base
+separate from the main branch until it's working and tested.</p>
+<p>If you are working on software in the lab, this is also how we use branches,
+but if your repo is an analysis repo,
+the analogy breaks down a bit.
+Even so, you can and should use branches
+to organize work on a particular analysis,
+or when you start working on a manuscript or poster.</p>
+<p>If nothing else, using a branch makes it easy to start a pull request
+(see the next section)
+to facilitate discussion of the thing you're working on.</p>
+<h4 id="submitting_pull_requests" ><a href="#submitting_pull_requests"> Submitting pull requests</a></h4><p>Pull requests (PRs) track discussion and code changes
+before they are merged to the <code>main</code> branch.
+They are not a feature of the version control system,
+they are a feature of the "social network" layer -
+eg. github or gitlab.</p>
+<p>Still, PRs are powerful tools for visualizing and organizing
+your work, and allow improved discussion and code review
+of specific topics.</p>
+<h4 id="using_issues_to_track_tasks_and_plans" ><a href="#using_issues_to_track_tasks_and_plans"> Using issues to track tasks and plans</a></h4><p>TODO</p>
+<h4 id="tagging,_releasing,_and_publishing" ><a href="#tagging,_releasing,_and_publishing"> Tagging, releasing, and publishing</a></h4><p>TODO</p>
+<h2 id="trainee_/_staff_personal_repos" ><a href="#trainee_/_staff_personal_repos"> Trainee / Staff Personal Repos</a></h2><p>Each student, postdoc, or other staff member
+should have a personal repository that will be used to 
+plan and keep track conflict progress,
+host meeting agendas/notes,
+host presentations, etc.</p>
+<h3 id="getting_started_from_the_template" ><a href="#getting_started_from_the_template"> Getting started from the template</a></h3><h3 id="periodic_meetings" ><a href="#periodic_meetings"> Periodic meetings</a></h3><h3 id="posters_and_presentations" ><a href="#posters_and_presentations"> Posters and presentations</a></h3><h2 id="project_repositories" ><a href="#project_repositories"> Project Repositories</a></h2><p>Each software or analysis project should have its own repo or repos</p>
+<h2 id="13633231208144796923" ><a href="#13633231208144796923">  </a></h2>
+  <div class="page-foot">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> Kevin Bonham, PhD. Last modified: 2025-06-11.
+    Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
+</div>
+
+</div>
+
+    
+    
+        <script src="/previews/PR1/libs/highlight/highlight.min.js"></script>
+<script src="/previews/PR1/libs/highlight/julia.min.js"></script>
+<script>hljs.highlightAll();hljs.configure({tabReplace: '    '});</script>
+
+    
+  </body>
+</html>

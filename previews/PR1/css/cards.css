@@ -1,0 +1,144 @@
+/* Fix for the footer spacing issue */
+/* Add this class to wrap all your cards */
+.cards-row {
+  display: flex;
+  flex-wrap: wrap;
+  clear: both;
+  overflow: auto; /* This ensures the container expands to include all floating children */
+  margin-bottom: 2rem; /* Add space before footer */
+}
+
+/* Update card column to use flexbox instead of float */
+.card-column {
+  width: 30%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+  box-sizing: border-box; /* Ensures padding doesn't add to width */
+}
+@media (max-width:62rem) {
+  .card-column {
+    width:45%;
+    display:block;
+  }
+}
+@media (max-width:30rem){
+  .card-column {
+    width:95%;
+    display:block;
+  }
+}
+.card-body{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.card-body img {
+  padding-left:0;
+  width: 100%;
+}
+.card-container {
+  padding: 0 16px;
+}
+.card-container::after, .row::after{
+  content:"";
+  clear:both;
+  display:table;
+}
+.card-title {
+  color:grey;
+}
+.card-vitae {
+  margin-top:0.5em;
+}
+.card-email {
+  font-family:courier;
+  margin-top:0.5em;
+  margin-bottom:0.5em;
+  word-break: break-all; /* This will break long email addresses */
+  overflow-wrap: break-word; /* Modern browsers */
+}
+.card-button{
+  border:none;
+  outline:0;
+  display:inline-block;
+  padding:8px;
+  color:white;
+  background-color:#000;
+  text-align:center;
+  cursor:pointer;
+  width:100%;
+}
+.card-button:hover{
+  background-color:#555;
+}
+/* Horizontal profile card */
+.profile-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.profile-info {
+  flex: 1;
+  padding-right: 2rem;
+}
+
+.profile-name {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+.profile-title {
+  color: #555;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.profile-email {
+  font-family: courier;
+  margin-bottom: 1rem;
+  word-break: break-all;
+  overflow-wrap: break-word;
+}
+
+.profile-button {
+  border: none;
+  outline: 0;
+  padding: 10px 20px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.profile-button:hover {
+  background-color: #333;
+}
+
+.profile-image-container {
+  width: 30%;
+  max-width: 250px;
+}
+
+.profile-image {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.profile-vitae {
+  font-style: italic;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+.profile-content {
+  line-height: 1.6;
+}
