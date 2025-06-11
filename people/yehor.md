@@ -5,6 +5,7 @@ title="Summer intern"
 vitae="Deep learner"
 portrait="/assets/yehor_headshot.png"
 email="ymishchyriak@wesleyan.edu"
+gituhub="@"
 joined = Date(2025,06,01)
 +++
 
