@@ -69,8 +69,10 @@ Be assured that Kevin has aggressively curated his notifications 😉.
 
 [zulip]: https://bonhamlab.zulipchat.com/
 
+~~~
 <br>
 <br>
+~~~
 
 > Please reach out to Kevin if you have any questions as you complete this set of steps. If there are additional onboarding items that are not listed here, please do not hesitate to make a branch of the LabWebsite repository and submit a pull-request with an update!
 
