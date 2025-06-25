@@ -69,6 +69,22 @@ Be assured that Kevin has aggressively curated his notifications 😉.
 
 [zulip]: https://bonhamlab.zulipchat.com/
 
+## Getting access to the Tufts HPC
+You will get an email from `
+Aff-account@tufts.edu` asking you to set up your Tufts account. Following the instructions in this email, you should 
+
+- [ ] Reset password
+- [ ] Follow instructions to set up duo security
+- [ ] Set up VPN with Cisco AnyConnect
+
+Once all of these steps have been completed, you can connect to the HPC through the terminal with your new tufts username:
+`ssh TUFTS_USERNAME@login.pax.tufts.edu`. You must be connected to the Tufts VPN for this to work.
+
+- Enter ‘yes’ when you are asked if you want to add `login.pax.tufts.edu` to the list of known hosts
+
+
+Troubleshooting:
+- Some other lab members received a Tufts username and email, but an HPC account was not created for them. This could possibly happen to other lab members. If your newly created Tufts password does not allow you to connect to the HPC, this could be a possibility
 <br>
 <br>
 
