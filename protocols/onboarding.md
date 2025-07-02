@@ -71,20 +71,50 @@ Be assured that Kevin has aggressively curated his notifications 😉.
 
 ## Getting access to the Tufts HPC
 You will get an email from `
-Aff-account@tufts.edu` asking you to set up your Tufts account. Following the instructions in this email, you should 
+aff-account@tufts.edu` asking you to set up your Tufts account. Following the instructions in this email, you should 
 
-- [ ] Reset password
-- [ ] Follow instructions to set up duo security
-- [ ] Set up VPN with Cisco AnyConnect
+- [ ] Reset your Tufts password
+- [ ] Follow instructions to set up Duo Security
+- [ ] Set up your VPN connection with Cisco AnyConnect
 
 Once all of these steps have been completed, you can connect to the HPC through the terminal with your new tufts username:
 `ssh TUFTS_USERNAME@login.pax.tufts.edu`. You must be connected to the Tufts VPN for this to work.
 
-- Enter ‘yes’ when you are asked if you want to add `login.pax.tufts.edu` to the list of known hosts
+You will get a message saying:
+```
+The authenticity of host 'login.pax.tufts.edu (XX.XXX.XXX.XX)' can't be established.
+ED25519 key fingerprint is SHA256:someLongFingerprint.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])?
+```
 
+
+
+- Enter ‘yes’ when you are asked if you want to keep connecting. This will trust the server from now on and add `login.pax.tufts.edu` to the list of known hosts in `~/.ssh/known_hosts/`. You won't get this prompt again. 
+
+#### Setting up passwordless HPC connection
+Set up a  SSH key-based authentication so you don't need to enter your Tufts password each time you connect to the Tufts HPC
+
+1. Generate an SSH key pair:
+- `ssh-keygen -t ed25519 -C tufts_email@tufts.edu`
+- Press "enter" to save the key at `/Users/local_username/.ssh/id_ed25519`
+- This creates:
+    - `~/.ssh/id_ed25519` (private key — keep safe)
+    - `~/.ssh/id_ed25519.pub` (public key — to be shared with servers)
+
+2. Copy your public key to the HPC login node
+- `ssh-copy-id tufts_username@login.pax.tufts.edu`
+- After entering your password again, this will append your public key to the file `~/.ssh/authorized_keys` on the HPC server
+<br>
+<br>
+
+You can test if this works by entering `ssh tufts_username@login.pax.tufts.edu`
+#### Helpful directories on the cluster
+Once you have access to the Tufts HPC, you can access your personal directory within the Bonham Lab folder at `/cluster/tufts/bonhamlab`. This is a good plae to store data/results for personal projects.
+- The shared bin (`/cluster/tufts/bonhamlab/shared/`) also contains helpful directories with conda environments, apptainer containers, bioinformatics tools (`bin`) and biobakery databases ( `databases`)
 
 Troubleshooting:
-- Some other lab members received a Tufts username and email, but an HPC account was not created for them. This could possibly happen to other lab members. If your newly created Tufts password does not allow you to connect to the HPC, this could be a possibility
+- Some other lab members received a Tufts username and email, but an HPC account was not created for them. If your newly created Tufts password does not allow you to connect to the HPC, this could be something to check.
 <br>
 <br>
 
