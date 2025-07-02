@@ -110,7 +110,7 @@ Set up a  SSH key-based authentication so you don't need to enter your Tufts pas
 
 You can test if this works by entering `ssh tufts_username@login.pax.tufts.edu`
 #### Helpful directories on the cluster
-Once you have access to the Tufts HPC, you can access your personal directory within the Bonham Lab folder at `/cluster/tufts/bonhamlab`. This is a good plae to store data/results for personal projects.
+Once you have access to the Tufts HPC, you can access your personal directory within the Bonham Lab folder at `/cluster/tufts/bonhamlab`. This is a good place to store data/results for personal projects.
 - The shared bin (`/cluster/tufts/bonhamlab/shared/`) also contains helpful directories with conda environments, apptainer containers, bioinformatics tools (`bin`) and biobakery databases ( `databases`)
 
 Troubleshooting:
