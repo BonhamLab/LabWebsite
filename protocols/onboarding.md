@@ -102,6 +102,10 @@ Set up a  SSH key-based authentication so you don't need to enter your Tufts pas
     - `~/.ssh/id_ed25519` (private key — keep safe)
     - `~/.ssh/id_ed25519.pub` (public key — to be shared with servers)
 
+> [!WARNING]  
+> Anyone with access to your private key can sign in as you with all of your privileges.
+> Do not share with anyone, or upload the key to anywhere that others have access to.
+
 2. Copy your public key to the HPC login node
 - `ssh-copy-id tufts_username@login.pax.tufts.edu`
 - After entering your password again, this will append your public key to the file `~/.ssh/authorized_keys` on the HPC server
