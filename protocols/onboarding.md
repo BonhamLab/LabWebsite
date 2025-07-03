@@ -70,8 +70,8 @@ Be assured that Kevin has aggressively curated his notifications 😉.
 [zulip]: https://bonhamlab.zulipchat.com/
 
 ## Getting access to the Tufts HPC
-You will get an email from `
-aff-account@tufts.edu` asking you to set up your Tufts account. Following the instructions in this email, you should 
+You will get an email from `aff-account@tufts.edu` 
+asking you to set up your Tufts account. Following the instructions in this email, you should 
 
 - [ ] Reset your Tufts password
 - [ ] Follow instructions to set up Duo Security
