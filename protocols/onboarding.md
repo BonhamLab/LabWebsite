@@ -113,6 +113,25 @@ Set up a  SSH key-based authentication so you don't need to enter your Tufts pas
 <br>
 
 You can test if this works by entering `ssh tufts_username@login.pax.tufts.edu`
+
+#### Setting up `~/.ssh/config`
+To simplify things even further, you can set up a `~/.ssh/config` file so that you can use access the Tufts HPC by simply typing `ssh tufts-hpc`. 
+
+1. If you don't already have a `~/.ssh/config` file, create one by typing `nano ~/.ssh/config`. Then, add the following information into the file.
+```
+Host tufts-hpc
+    HostName login.pax.tufts.edu
+    User tufts_username
+    IdentityFile ~/.ssh/id_ed25519
+    Port 22
+```
+2. To make sure that no one can access this file except for you, run `chmod 600 ~/.ssh/config`. 
+
+3. Once the file has been saved, you can type `ssh tufts-hpc`
+
+4. To exit the cluster, type `exit`.
+
+
 #### Helpful directories on the cluster
 Once you have access to the Tufts HPC, you can access your personal directory within the Bonham Lab folder at `/cluster/tufts/bonhamlab`. This is a good place to store data/results for personal projects.
 - The shared bin (`/cluster/tufts/bonhamlab/shared/`) also contains helpful directories with conda environments, apptainer containers, bioinformatics tools (`bin`) and biobakery databases ( `databases`)
