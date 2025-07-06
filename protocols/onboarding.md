@@ -69,6 +69,7 @@ Be assured that Kevin has aggressively curated his notifications 😉.
 
 [zulip]: https://bonhamlab.zulipchat.com/
 
+
 ## Getting access to the Tufts HPC
 You will get an email from `aff-account@tufts.edu` 
 asking you to set up your Tufts account. Following the instructions in this email, you should 
@@ -138,8 +139,7 @@ Once you have access to the Tufts HPC, you can access your personal directory wi
 
 Troubleshooting:
 - Some other lab members received a Tufts username and email, but an HPC account was not created for them. If your newly created Tufts password does not allow you to connect to the HPC, this could be something to check.
-<br>
-<br>
+
 
 > Please reach out to Kevin if you have any questions as you complete this set of steps. If there are additional onboarding items that are not listed here, please do not hesitate to make a branch of the LabWebsite repository and submit a pull-request with an update!
 
