@@ -225,14 +225,18 @@ This gives a 2-hour time limit interactive session with a bash terminal, with 2G
 You can adjust the -t or the -mem requests as needed.
 
 ### Requesting specific types of gpus:
-Use the --gres option for either srun or sbatch commands
-General syntax: ```--gres=gpu[:type][:number]```. Specifying either type or number is optional.
+
+Use the `--gres` option for either srun or sbatch commands
+
+General syntax: `--gres=gpu[:type][:number]`. Specifying either type or number is optional.
+
 For example:
-A100 gpu: ```--gres gpu:a100```
-V100 gpu: ```--gres gpu:v100```
-T4 gpu: ```--gres gpu:t4```
-RTX 6000 gpu: ```--gres gpu:rtx_6000```
-RTX A6000 gpu: ```--gres gpu:rtx_a6000```
+
+A100 gpu: `--gres gpu:a100`
+V100 gpu: `--gres gpu:v100`
+T4 gpu: `--gres gpu:t4`
+RTX 6000 gpu: `--gres gpu:rtx_6000`
+RTX A6000 gpu: `--gres gpu:rtx_a6000`
 
 See [GPU Hardware List](https://www.cs.tufts.edu/cs/152L3D/2024f/tufts_hpc_setup.html#gpu-hardware-list)
 
@@ -242,7 +246,7 @@ See [GPU Hardware List](https://www.cs.tufts.edu/cs/152L3D/2024f/tufts_hpc_setup
   jupyter notebook --no-browser --port=<PORT>
 ```
 * NOTE: after you've launched Jupyter, in the output you will see something like:
-```.../localhost:6789/tree?token=<TOKEN>```
+`.../localhost:6789/tree?token=<TOKEN>`
 You need to copy the <TOKEN> for this session; you will need it later.
 
 4. Tunneling the remote HPC port to your local machine port:
@@ -265,6 +269,6 @@ Now, do the same for the compute node you were allocated (f.e. i2cmp003):
 
 5. Opening Jupyter in the browser
 Go to an internet browser on your machine and look up the following address:
-```http://localhost:<PORT>``` (again, you may use 6789 as the port number throughout the process)
+`http://localhost:<PORT>` (again, you may use 6789 as the port number throughout the process)
 Now, enter the token you copied in the cluster terminal as well as some password you need to come up with for this session only.
 Done. Now do science.
