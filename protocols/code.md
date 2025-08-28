@@ -201,25 +201,31 @@ host presentations, etc.
 
 Each software or analysis project should have its own repo or repos
 
-
 ##  Using Tufts high-performance computing (HPC) cluster
+
 For detailed guidelines regarding Tufts HPC usage please visit [the dedicated website](https://it.tufts.edu/high-performance-computing)
 
 ## "Linking" your Jupyter notebook to a cluster's compute node
+
 1. ssh into the cluster:
-```bash
+   
+   ```bash
    ssh your_name@login.cluster.edu
-```
+   ```
 
 2. Request access to an interactive compute node and its resources:
-CPU:
-```bash
-  srun -t 0-02:00 --mem 2000 -p interactive --pty bash
-```
-GPU:
-```bash
-  srun -t 0-02:00 --mem 2000 -p gpu --gres gpu --pty bash
-```
+
+   CPU:
+
+   ```bash
+   srun -t 0-02:00 --mem 2000 -p interactive --pty bash
+   ```
+
+   GPU:
+
+   ```bash
+     srun -t 0-02:00 --mem 2000 -p gpu --gres gpu --pty bash
+   ```
 
 This gives a 2-hour time limit interactive session with a bash terminal, with 2GB of memory.
 You can adjust the -t or the -mem requests as needed.
@@ -232,43 +238,49 @@ General syntax: `--gres=gpu[:type][:number]`. Specifying either type or number i
 
 For example:
 
-A100 gpu: `--gres gpu:a100`
-V100 gpu: `--gres gpu:v100`
-T4 gpu: `--gres gpu:t4`
-RTX 6000 gpu: `--gres gpu:rtx_6000`
-RTX A6000 gpu: `--gres gpu:rtx_a6000`
+- A100 gpu: `--gres gpu:a100`
+- V100 gpu: `--gres gpu:v100`
+- T4 gpu: `--gres gpu:t4`
+- RTX 6000 gpu: `--gres gpu:rtx_6000`
+- RTX A6000 gpu: `--gres gpu:rtx_a6000`
 
 See [GPU Hardware List](https://www.cs.tufts.edu/cs/152L3D/2024f/tufts_hpc_setup.html#gpu-hardware-list)
 
 3. Activating your conda environment and launching Jupyter notebook on a specific port:
-```bash
-  conda activate <ENV>
-  jupyter notebook --no-browser --port=<PORT>
-```
-* NOTE: after you've launched Jupyter, in the output you will see something like:
-`.../localhost:6789/tree?token=<TOKEN>`
-You need to copy the <TOKEN> for this session; you will need it later.
+
+   ```bash
+   conda activate <ENV>
+   jupyter notebook --no-browser --port=<PORT>
+   ```
+
+   >[!NOTE]
+   after you've launched Jupyter, in the output you will see something like:
+   `.../localhost:6789/tree?token=<TOKEN>`
+   You need to copy the <TOKEN> for this session; you will need it later.
 
 4. Tunneling the remote HPC port to your local machine port:
-After you have entered the "srun" command, you will be allocated a certain node.
-Now, go to the terminal on your local machine and enter the following:
+   After you have entered the "srun" command, you will be allocated a certain node.
+   Now, go to the terminal on your local machine and enter the following:
 
-First, tunnel the port you bound Jupyter to (f.e. 6789) to some port on your local machine:
-```bash
-  ssh your_name@login.cluster.edu -L <JUPYTER-PORT>:localhost:<PORT>
-  # for example
-  # ssh yehor@login.cluster.edu -L 6789:localhost:6789
-```
 
-Now, do the same for the compute node you were allocated (f.e. i2cmp003):
-```bash
-  ssh <NODE> -L <JUPYTER-PORT>:localhost:<PORT>
-  # for example
-  # ssh i2cmp003 -L 6789:localhost:6789
-```
+   First, tunnel the port you bound Jupyter to (f.e. 6789) to some port on your local machine:
+   
+   ```bash
+   ssh your_name@login.cluster.edu -L <JUPYTER-PORT>:localhost:<PORT>
+   # for example
+   # ssh yehor@login.cluster.edu -L 6789:localhost:6789
+   ```
+
+   Now, do the same for the compute node you were allocated (f.e. i2cmp003):
+   ```bash
+   ssh <NODE> -L <JUPYTER-PORT>:localhost:<PORT>
+   # for example
+   # ssh i2cmp003 -L 6789:localhost:6789
+   ```
 
 5. Opening Jupyter in the browser
-Go to an internet browser on your machine and look up the following address:
-`http://localhost:<PORT>` (again, you may use 6789 as the port number throughout the process)
-Now, enter the token you copied in the cluster terminal as well as some password you need to come up with for this session only.
-Done. Now do science.
+   Go to an internet browser on your machine and look up the following address:
+   `http://localhost:<PORT>` (again, you may use 6789 as the port number throughout the process)
+   Now, enter the token you copied in the cluster terminal
+   as well as some password you need to come up with for this session only.
+   Done. Now do science.
