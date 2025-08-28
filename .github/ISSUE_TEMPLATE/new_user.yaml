@@ -1,0 +1,38 @@
+name: New lab member
+description: Welcome to the lab! Please fill out as much of this info as possible.
+title: "[New User]: "
+labels: ["enhancement","users"]
+assignees:
+  - kescobo
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Welcome to the lab! Please fill out as much of this info as possible.
+  - type: input
+    id: contact
+    attributes:
+      label: Contact Details
+      description: Use your Tufts email if you have one?
+      placeholder: ex. email@example.com
+    validations:
+      required: true
+  - type: textarea
+    id: bio
+    attributes:
+      label: Who are you?
+      description: Tell us a little about yourself (for the website)!
+      placeholder: About yourself
+      value: "I am the very model of a modern major general"
+    validations:
+      required: true
+  - type: dropdown
+    id: role
+    attributes:
+      label: What will your role be?
+      description: If you're not sure, pick "staff" and we can fix it later
+      options:
+        - staff
+        - graduate student (rotation)
+        - postdoc
+        - intern
