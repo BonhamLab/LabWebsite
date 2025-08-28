@@ -161,54 +161,63 @@ host presentations, etc.</p>
 <h2 id=""linking"_your_jupyter_notebook_to_a_cluster's_compute_node" ><a href="#"linking"_your_jupyter_notebook_to_a_cluster's_compute_node"> "Linking" your Jupyter notebook to a cluster's compute node</a></h2><ol>
 <li>ssh into the cluster:</li>
 </ol>
-<pre><code class="bash">   ssh your_name@login.cluster.edu</code></pre>
+   <pre><code class="bash">   ssh your_name@login.cluster.edu
+   </code></pre>
 <ol start="2">
-<li>Request access to an interactive compute node and its resources:
-CPU:</li>
+<li>Request access to an interactive compute node and its resources:</li>
 </ol>
-<pre><code class="bash">  srun -t 0-02:00 --mem 2000 -p interactive --pty bash</code></pre>
-<p>GPU:</p>
-<pre><code class="bash">  srun -t 0-02:00 --mem 2000 -p gpu --gres gpu --pty bash</code></pre>
+<p>   CPU:</p>
+   <pre><code class="bash">   srun -t 0-02:00 --mem 2000 -p interactive --pty bash
+   </code></pre>
+<p>   GPU:</p>
+   <pre><code class="bash">     srun -t 0-02:00 --mem 2000 -p gpu --gres gpu --pty bash
+   </code></pre>
 <p>This gives a 2-hour time limit interactive session with a bash terminal, with 2GB of memory.
 You can adjust the -t or the -mem requests as needed.</p>
 <h3 id="requesting_specific_types_of_gpus" ><a href="#requesting_specific_types_of_gpus"> Requesting specific types of gpus:</a></h3><p>Use the <code>--gres</code> option for either srun or sbatch commands</p>
 <p>General syntax: <code>--gres=gpu[:type][:number]</code>. Specifying either type or number is optional.</p>
 <p>For example:</p>
-<p>A100 gpu: <code>--gres gpu:a100</code>
-V100 gpu: <code>--gres gpu:v100</code>
-T4 gpu: <code>--gres gpu:t4</code>
-RTX 6000 gpu: <code>--gres gpu:rtx_6000</code>
-RTX A6000 gpu: <code>--gres gpu:rtx_a6000</code></p>
+<ul>
+<li>A100 gpu: <code>--gres gpu:a100</code></li>
+<li>V100 gpu: <code>--gres gpu:v100</code></li>
+<li>T4 gpu: <code>--gres gpu:t4</code></li>
+<li>RTX 6000 gpu: <code>--gres gpu:rtx_6000</code></li>
+<li>RTX A6000 gpu: <code>--gres gpu:rtx_a6000</code></li>
+</ul>
 <p>See <a href="https://www.cs.tufts.edu/cs/152L3D/2024f/tufts_hpc_setup.html#gpu-hardware-list">GPU Hardware List</a></p>
 <ol start="3">
 <li>Activating your conda environment and launching Jupyter notebook on a specific port:</li>
 </ol>
-<pre><code class="bash">  conda activate &lt;ENV&gt;
-  jupyter notebook --no-browser --port=&lt;PORT&gt;</code></pre>
-<ul>
-<li>NOTE: after you've launched Jupyter, in the output you will see something like:
-<code>.../localhost:6789/tree?token=&lt;TOKEN&gt;</code>
-You need to copy the <a href="TOKEN">TOKEN</a> for this session; you will need it later.</li>
-</ul>
-<ol start="4">
+   <pre><code class="bash">   conda activate &lt;ENV&gt;
+   jupyter notebook --no-browser --port=&lt;PORT&gt;
+   </code></pre>
+<blockquote><blockquote><p>[!NOTE]
+   after you've launched Jupyter, in the output you will see something like:
+   <code>.../localhost:6789/tree?token=&lt;TOKEN&gt;</code>
+   You need to copy the <a href="TOKEN">TOKEN</a> for this session; you will need it later.</p>
+</blockquote></blockquote><ol start="4">
 <li>Tunneling the remote HPC port to your local machine port:
-After you have entered the "srun" command, you will be allocated a certain node.
-Now, go to the terminal on your local machine and enter the following:</li>
+   After you have entered the "srun" command, you will be allocated a certain node.
+   Now, go to the terminal on your local machine and enter the following:</li>
 </ol>
-<p>First, tunnel the port you bound Jupyter to (f.e. 6789) to some port on your local machine:</p>
-<pre><code class="bash">  ssh your_name@login.cluster.edu -L &lt;JUPYTER-PORT&gt;:localhost:&lt;PORT&gt;
-  # for example
-  # ssh yehor@login.cluster.edu -L 6789:localhost:6789</code></pre>
-<p>Now, do the same for the compute node you were allocated (f.e. i2cmp003):</p>
-<pre><code class="bash">  ssh &lt;NODE&gt; -L &lt;JUPYTER-PORT&gt;:localhost:&lt;PORT&gt;
-  # for example
-  # ssh i2cmp003 -L 6789:localhost:6789</code></pre>
+<p>   First, tunnel the port you bound Jupyter to (f.e. 6789) to some port on your local machine:</p>
+   <pre><code class="bash">   ssh your_name@login.cluster.edu -L &lt;JUPYTER-PORT&gt;:localhost:&lt;PORT&gt;
+   # for example
+   # ssh yehor@login.cluster.edu -L 6789:localhost:6789
+   </code></pre>
+<p>   Now, do the same for the compute node you were allocated (f.e. i2cmp003):
+   </p>
+<pre><code class="bash">   ssh &lt;NODE&gt; -L &lt;JUPYTER-PORT&gt;:localhost:&lt;PORT&gt;
+   # for example
+   # ssh i2cmp003 -L 6789:localhost:6789
+   </code></pre>
 <ol start="5">
 <li>Opening Jupyter in the browser
-Go to an internet browser on your machine and look up the following address:
-<code>http://localhost:&lt;PORT&gt;</code> (again, you may use 6789 as the port number throughout the process)
-Now, enter the token you copied in the cluster terminal as well as some password you need to come up with for this session only.
-Done. Now do science.</li>
+   Go to an internet browser on your machine and look up the following address:
+   <code>http://localhost:&lt;PORT&gt;</code> (again, you may use 6789 as the port number throughout the process)
+   Now, enter the token you copied in the cluster terminal
+   as well as some password you need to come up with for this session only.
+   Done. Now do science.</li>
 </ol>
 
   <div class="page-foot">
