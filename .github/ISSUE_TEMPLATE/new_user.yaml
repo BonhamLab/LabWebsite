@@ -1,6 +1,6 @@
 name: New lab member
 description: Welcome to the lab! Please fill out as much of this info as possible.
-title: "[New User]: "
+title: "[New User]: YOUR NAME"
 labels: ["enhancement","users"]
 assignees:
   - kescobo
@@ -17,6 +17,12 @@ body:
       placeholder: ex. email@example.com
     validations:
       required: true
+  - type: input
+    id: preferred
+    attributes:
+      label: Preferred name
+      description: What would you like people to call you?
+      placeholder: eg. Socrates - pronounced 'SOCK-ruh-tees'
   - type: textarea
     id: bio
     attributes:
