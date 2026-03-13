@@ -18,6 +18,9 @@ jobs:
     permissions: write-all
     steps:
       - uses: actions/checkout@v4
+        with:
+          submodules: true
+          fetch-depth: 0
 
       - name: 👀 Set preview path for PRs
         run: |
