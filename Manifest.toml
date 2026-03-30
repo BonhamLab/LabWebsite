@@ -291,7 +291,7 @@ version = "2.0.0"
 
 [[deps.ObsidianXranklin]]
 deps = ["Dates", "Hyperscript", "JSON3", "YAML"]
-git-tree-sha1 = "8a0e82f8dd711a1a92f159c6fbe9d9848812c3c3"
+git-tree-sha1 = "4057efdbf7d416ae641cadeefb06570922e7cf49"
 repo-rev = "main"
 repo-url = "https://github.com/BonhamLab/ObsidianXranklin.jl.git"
 uuid = "8d335cfd-d756-4e08-9ddc-49de0f021f04"
