@@ -1,7 +1,7 @@
 using Literate
 using TimeZones
 using Git
-import ObsidianXranklin
+using ObsidianXranklin
 
 if isdir("vault")
     ObsidianXranklin.watch_vault("vault", ".";
@@ -157,8 +157,6 @@ function get_projects(basepath::String="projects")
     return posts
 end
 
-# Add this to your utils.jl file
-hfun_obsidian_graph() = ObsidianXranklin.hfun_obsidian_graph()
 
 function hfun_nav_link(args)
     # Get the current page path
