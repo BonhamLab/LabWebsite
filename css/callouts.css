@@ -14,6 +14,9 @@
   font-size: 0.95em;
   text-transform: uppercase;
   letter-spacing: 0.03em;
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
 }
 
 .callout-content > p:first-child { margin-top: 0; }

@@ -61,9 +61,11 @@
 <p>Use bases to organize frequently-related notes (eg Bench protocols.base), click on tags (eg #protocol ) to bring up the search panel, or use the graph view (<code>ctrl-g</code>) and local graph view (<code>ctrl-shift-g</code>), which will show you links between notes and tags.</p>
 <p>Tags can also be added in-line (as with <code>#protocol</code> above).</p>
 <h2 id="folders" ><a href="#folders"> Folders</a></h2><p>Folders (directories) are strictly for the file system, and mostly should not affect vault organization. Nevertheless, there are a few folders for very high-level organization, and for playing nice with certain plugins.</p>
-<p><span style="color:red;">[FAILED:]&gt;&lbrace;&lbrace; callout warning Only file names matter for linking&rbrace;&rbrace;&lt;</span>
-In other words, obsidian doesn't distinguish between <code>[some_folder/my note](#wikilink-missing)</code> and <code>[my note](#wikilink-missing)</code>. This means that if you make a note in one folder and move it, all links are automatically updated. But it also means that you cannot use the same name as anyone else.
-<span style="color:red;">[FAILED:]&gt;&lbrace;&lbrace; end_callout&rbrace;&rbrace;&lt;</span></p>
+<p><div class="callout callout-warning"><div class="callout-title">⚠️ Only file names matter for linking</div><div class="callout-content">
+
+In other words, obsidian doesn't distinguish between <code>[[some_folder/my note]]</code> and <code>[[my note]]</code>. This means that if you make a note in one folder and move it, all links are automatically updated. But it also means that you cannot use the same name as anyone else.
+
+</div></div></p>
 <h2 id="databases" ><a href="#databases"> Databases</a></h2><p>Databases or bases (files that end with <code>.base</code>) are specially displayed YAML files that enable aggregation and sorting of lots of other notes - essentially treating them as data. For example, the All bases.base is filtered on notes that are themselves bases, but you could also filter and sort on a specific tag or group of tags, creation time, or any other metadata associated with a note.</p>
 <p>Bases can also be embedded in other notes by prepending the link with <code>!</code>, eg: </p>
 <table class="obsidian-base"><thead><tr><th>Name</th><th>Folder</th><th>Modified</th><th>Backlinks</th></tr></thead><tbody></tbody></table>
