@@ -1,0 +1,127 @@
+/* Obsidian callout blocks */
+
+.callout {
+  border-radius: 6px;
+  margin: 1.2em 0;
+  padding: 0.8em 1em;
+  border-left: 4px solid #aaaaaa;
+  background-color: #f8f8f8;
+}
+
+.callout-title {
+  font-weight: 600;
+  margin-bottom: 0.4em;
+  font-size: 0.95em;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.callout-content > p:first-child { margin-top: 0; }
+.callout-content > p:last-child  { margin-bottom: 0; }
+
+/* Type-specific colors */
+
+.callout-note    { border-left-color: #448aff; background-color: #e8f0fe; }
+.callout-note    .callout-title { color: #1a5ccc; }
+
+.callout-info    { border-left-color: #00bcd4; background-color: #e0f7fa; }
+.callout-info    .callout-title { color: #006d7a; }
+
+.callout-tip,
+.callout-hint,
+.callout-important { border-left-color: #00c853; background-color: #e8f5e9; }
+.callout-tip    .callout-title,
+.callout-hint   .callout-title,
+.callout-important .callout-title { color: #2e7d32; }
+
+.callout-warning,
+.callout-caution,
+.callout-attention { border-left-color: #ff9800; background-color: #fff8e1; }
+.callout-warning  .callout-title,
+.callout-caution  .callout-title,
+.callout-attention .callout-title { color: #e65100; }
+
+.callout-danger,
+.callout-error,
+.callout-failure,
+.callout-fail,
+.callout-missing { border-left-color: #f44336; background-color: #fdecea; }
+.callout-danger  .callout-title,
+.callout-error   .callout-title,
+.callout-failure .callout-title,
+.callout-fail    .callout-title,
+.callout-missing .callout-title { color: #b71c1c; }
+
+.callout-question,
+.callout-help,
+.callout-faq { border-left-color: #9c27b0; background-color: #f3e5f5; }
+.callout-question .callout-title,
+.callout-help     .callout-title,
+.callout-faq      .callout-title { color: #6a1b9a; }
+
+.callout-success,
+.callout-check,
+.callout-done { border-left-color: #4caf50; background-color: #e8f5e9; }
+.callout-success .callout-title,
+.callout-check   .callout-title,
+.callout-done    .callout-title { color: #1b5e20; }
+
+.callout-example { border-left-color: #7c4dff; background-color: #ede7f6; }
+.callout-example .callout-title { color: #4527a0; }
+
+.callout-quote,
+.callout-cite { border-left-color: #9e9e9e; background-color: #f5f5f5; }
+.callout-quote .callout-title,
+.callout-cite  .callout-title { color: #424242; }
+
+/* Unpublished wiki-links */
+
+a[href="#wikilink-missing"] {
+  color: #999;
+  text-decoration: none;
+  border-bottom: 1px dashed #bbb;
+  pointer-events: none;
+  cursor: default;
+}
+
+/* Obsidian Bases table */
+
+.obsidian-base {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0;
+  font-size: 0.95em;
+}
+
+.obsidian-base th,
+.obsidian-base td {
+  border: 1px solid #ddd;
+  padding: 0.5em 0.8em;
+  text-align: left;
+}
+
+.obsidian-base th {
+  background-color: #f0f0f0;
+  font-weight: 600;
+}
+
+.obsidian-base tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.note-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.note-tag {
+  display: inline-block;
+  background-color: #eef4fb;
+  color: #2c6e9e;
+  border: 1px solid #bcd4ed;
+  border-radius: 10px;
+  padding: 1px 8px;
+  font-size: 0.82em;
+  white-space: nowrap;
+}
