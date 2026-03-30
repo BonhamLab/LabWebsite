@@ -4,7 +4,7 @@ using Git
 import ObsidianXranklin
 
 if isdir("vault")
-    ObsidianXranklin.sync_vault("vault", ".";
+    ObsidianXranklin.watch_vault("vault", ".";
         output_dir = "notes",
         index_note = getgvar(:obsidian_home, nothing),
     )
