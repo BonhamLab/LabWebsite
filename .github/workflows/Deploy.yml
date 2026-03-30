@@ -17,6 +17,9 @@ jobs:
     runs-on: ubuntu-latest
     permissions: write-all
     steps:
+      - name: Rewrite SSH to HTTPS for submodules
+        run: git config --global url."https://github.com/".insteadOf "git@github.com:"
+
       - uses: actions/checkout@v4
         with:
           submodules: true
