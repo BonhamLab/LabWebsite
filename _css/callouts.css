@@ -124,10 +124,4 @@ a[href="#wikilink-missing"] {
   padding: 1px 8px;
   font-size: 0.82em;
   white-space: nowrap;
-  text-decoration: none;
-}
-
-.note-tag:hover {
-  background-color: #d6e9f8;
-  border-color: #8bbad9;
 }
