@@ -18,6 +18,10 @@ jobs:
     permissions: write-all
     steps:
       - uses: actions/checkout@v4
+        with:
+          ssh-key: ${{ secrets.VAULT_DEPLOY_KEY }}
+          submodules: true
+          fetch-depth: 0
 
       - name: 👀 Set preview path for PRs
         run: |

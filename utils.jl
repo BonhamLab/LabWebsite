@@ -1,6 +1,14 @@
 using Literate
 using TimeZones
 using Git
+import ObsidianXranklin
+
+if isdir("vault")
+    ObsidianXranklin.watch_vault("vault", ".";
+        output_dir = "notes",
+        index_note = getgvar(:obsidian_home, nothing),
+    )
+end
 
 @reexport using Dates
 import Hyperscript as HS
@@ -150,6 +158,8 @@ function get_projects(basepath::String="projects")
 end
 
 # Add this to your utils.jl file
+hfun_obsidian_graph() = ObsidianXranklin.hfun_obsidian_graph()
+
 function hfun_nav_link(args)
     # Get the current page path
     (href, text) = args
