@@ -8,3 +8,7 @@ associated with the immune system and the gut microbiome.
 
 {{list_people}}
 
+## Former Members
+
+{{list_alumni}}
+

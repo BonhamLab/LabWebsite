@@ -46,7 +46,7 @@ function hfun_list_people()
                     )
                 )
             )
-           ) for p in get_people() if !p.alumn
+             ) for p in get_people() if !(p.alumn || p.hide)
         )...
         )
     )
@@ -61,6 +61,7 @@ function person_info(rp)
     portrait=getvarfrom(:portrait, rp, "/assets/portrait_placeholder.png"),
     vitae=getvarfrom(:vitae, rp),
     alumn=getvarfrom(:alumn, rp, false),
+    hide=getvarfrom(:hide, rp, false),
     github=getvarfrom(:github, rp),
     href="/$(splitext(rp)[1])",
     tags=get_page_tags(rp)
@@ -106,6 +107,31 @@ function hfun_person_header()
         ),
 
     ))
+end
+
+function hfun_list_alumni()
+    alumni = filter(p -> p.alumn && !p.hide, get_people())
+    isempty(alumni) && return ""
+    return string(
+        node("div", class="alum-row",
+        (
+        node("div", class="alum-card",
+            node("img", src=p.portrait, alt=p.name),
+            node("div", class="alum-card-info",
+                node("div", class="alum-name",
+                    node("a", href=p.href, p.name)
+                ),
+                node("div", class="alum-title", p.title),
+                node("div", class="alum-github",
+                    node("a", href=joinpath("https://github.com", p.github),
+                        node("i", class="fa-brands fa-github-square"),
+                        " $(p.github)")
+                )
+            )
+           ) for p in alumni
+        )...
+        )
+    )
 end
 
 function hfun_list_projects()
