@@ -69,6 +69,52 @@
 .card-button:hover{
   background-color:#555;
 }
+/* Alumni mini-cards */
+.alum-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+.alum-card {
+  display: flex;
+  align-items: center;
+  width: 45%;
+  padding: 0.5rem 0.8rem;
+  margin: 0.4rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+}
+.alum-card img {
+  width: 105px;
+  height: 105px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+.alum-card-info {
+  flex: 1;
+  min-width: 0;
+}
+.alum-name {
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 0 0 0.1rem;
+}
+.alum-title {
+  color: grey;
+  font-size: 0.85rem;
+  margin: 0;
+}
+.alum-github {
+  font-size: 0.8rem;
+}
+@media (max-width: 40rem) {
+  .alum-card {
+    width: 95%;
+  }
+}
+
 /* Horizontal profile card */
 .profile-header {
   display: flex;
