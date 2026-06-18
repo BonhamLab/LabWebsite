@@ -4,9 +4,13 @@ using Git
 using ObsidianXranklin
 
 if isdir("vault")
-    ObsidianXranklin.watch_vault("vault", ".";
-        output_dir = "notes",
-        index_note = getgvar(:obsidian_home, nothing),
+    _output_subdir = getgvar(:vault_output_subdir, "vault")
+    ObsidianXranklin.setup_vault(abspath("vault");
+        skip_folders  = getgvar(:vault_skip_folders, ["Templates/", "Attachments/"]),
+        output_subdir = _output_subdir,
+        assets_subdir = getgvar(:vault_assets_subdir, _output_subdir),
+        vault_subdir  = "vault",
+        index_note    = getgvar(:obsidian_home, nothing),
     )
 end
 
